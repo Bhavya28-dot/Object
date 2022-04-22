@@ -1,0 +1,44 @@
+body{
+    background-size: cover;
+    background-position: center;
+}
+.heading{
+    font-size: 35px;
+    font-family: cursive;
+    color: brown;
+    border-radius: 10px;
+    padding: 5px;
+    border-style: solid;
+    width: 20%;
+    font-weight: bold;
+}
+.heading_1{
+    font-size: 25px;
+    font-family: monospace;
+    color: brown;
+    border-radius: 10px;
+    padding: 5px;
+    border-style: solid;
+    width: 20%;
+    box-shadow: 5px 5px 5px grey;
+}
+.status{
+    font-size: 28px;
+    color: brown;
+    font-weight: bold;
+    font-family:cursive;
+    border-style: dotted;
+    width: 30%; 
+
+}
+.back{
+   font-size: 30px;
+    color: brown;
+    font-family:cursive;
+    border-style: double;
+    width: 10%; 
+    float: right ;
+}
+canvas{
+    margin-top: 30px;
+}
