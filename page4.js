@@ -3,6 +3,7 @@ function back(){
 }
 img="";
 status="";
+objects=[];
 function preload(){
     img=loadImage("ice cream.webp");
 }
@@ -13,12 +14,20 @@ function setup(){
     document.getElementById("status").innerHTML="Status: Ice-cream detected";
 }
 function draw(){
-    image(img,0,0,640,420);
-    fill("red");
-    text("Ice Cream",45,75);
-    noFill();
-    stroke("red");
-    rect(10,10,550,400);
+    function draw() {
+        image(img, 0, 0, 640, 420);
+        if (status != "") {
+            for (i = 0; i < objects.length; i++) {
+                document.getElementById("status").innerHTML = "Status- Detected Objects";
+                fill("red");
+                percent = floor(objects[i].confidence * 100);
+                text(objects[i].label + " " + percent + "%", objects[i].x + 15, objects[i].y + 15);
+                noFill();
+                stroke("red");
+                rect(objects[i].x, objects[i].y, objects[i].height, objects[i].width);
+            }
+        }
+    }
 }
 
 function modelLoaded(){
@@ -30,4 +39,5 @@ function gotResult(error,result){
     if(error){
         console.log(error);
     } console.log(result);
+    objects=result;
 }
